@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KK Blog</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 id="site-name">KK Blog</h1>
+      <nav class="nav">
+        <a href="index.html" id="nav-home">主页</a>
+        <a href="index.html#categories" id="nav-cats">分类</a>
+        <a href="index.html#about" id="nav-about">关于我</a>
+        <a href="admin.html" id="nav-admin">后台</a>
+        <select id="lang-select" class="lang-select" aria-label="语言切换" style="display:none">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="posts-list">
+      <p class="muted">加载文章中…</p>
+    </section>
+  </main>
+
+  <footer class="container footer" id="about">
+    <h3>About / 关于</h3>
+    <p id="about-content">这是一个基于 Supabase 的简易博客示例（静态 HTML + JS）。</p>
+  </footer>
+
+  <script>
+    // Config - please set your Supabase project URL & anon key here (or set via env in hosting)
+    const SUPABASE_URL = "https://your-project.supabase.co";
+    const SUPABASE_ANON_KEY = "your-public-anon-key";
+  </script>
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

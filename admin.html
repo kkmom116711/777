@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KK Blog - 后台管理</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>KK Blog - 后台</h1>
+      <nav class="nav">
+        <a href="index.html">主页</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="login-section">
+      <h2>管理员登录</h2>
+      <input id="pw" type="password" placeholder="输入后台密码" class="input"/>
+      <button id="btn-login" class="btn">登录</button>
+      <p class="muted">默认密码存于页面脚本（可在发布前替换到环境管理）。</p>
+    </section>
+
+    <section id="admin-panel" style="display:none">
+      <div class="admin-controls">
+        <input id="title" class="input" placeholder="文章标题" />
+        <input id="cover" class="input" placeholder="封面图片 URL（可选）" />
+        <textarea id="content" class="textarea" placeholder="Markdown 内容"></textarea>
+        <div class="row">
+          <button id="btn-create" class="btn btn-primary">发布 / 更新</button>
+          <button id="btn-clear" class="btn">清空</button>
+        </div>
+      </div>
+
+      <h3>已发布文章</h3>
+      <div id="admin-posts" class="posts-list"></div>
+    </section>
+  </main>
+
+  <script>
+    // CONFIG - replace with your Supabase project values after downloading
+    const SUPABASE_URL = "https://your-project.supabase.co";
+    const SUPABASE_ANON_KEY = "your-public-anon-key";
+    // Admin password (embedded here per your request) - change before public use
+    const ADMIN_PASSWORD = "kk2025";
+  </script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
